@@ -94,7 +94,10 @@ public class ATM {
                 case "2" -> deposit(account);
                 case "3" -> withdraw(account);
                 case "4" -> transfer(account);
-                case "5" -> changePwd(account);
+                case "5" -> {
+                    changePwd(account);
+                    return;
+                }
                 case "6" -> {
                     System.out.println("感谢您的使用，再见！");
                     return;
