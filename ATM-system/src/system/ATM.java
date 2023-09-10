@@ -100,12 +100,32 @@ public class ATM {
                     return;
                 }
                 case "7" -> {
-                    System.out.println("注销成功！");
-                    accounts.remove(account);
-                    return;
+                    if (deleteAccount(account)) {
+                        return;
+                    }
                 }
                 default -> System.out.println("没有这个选项，请重新输入！");
             }
+        }
+    }
+
+    private boolean deleteAccount(Account account) {
+        System.out.println("=========注销账户=========");
+        System.out.println("确认要注销账户吗？（y/n）");
+        String choice = scanner.next();
+        if (choice.equals("y")) {
+            // 核对余额，非零不能注销
+            if (account.getBalance() != 0) {
+                System.out.println("账户还有余额，不能注销！");
+                return false;
+            }
+            accounts.remove(account);
+            System.out.println("注销成功！");
+            return true;
+        }
+        else {
+            System.out.println("选择了不注销账户");
+            return false;
         }
     }
 
@@ -149,6 +169,7 @@ public class ATM {
                 }
                 account.setBalance(account.getBalance() - money);
                 System.out.println("取款成功！");
+                return;
             } else {
                 System.out.println("取款金额不能小于100，请重新输入！");
             }
