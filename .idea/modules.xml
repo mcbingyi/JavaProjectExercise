@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ATM-system/ATM-system.iml" filepath="$PROJECT_DIR$/ATM-system/ATM-system.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaProjectExercise.iml" filepath="$PROJECT_DIR$/JavaProjectExercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library-management-system/library-management-system.iml" filepath="$PROJECT_DIR$/library-management-system/library-management-system.iml" />
     </modules>
   </component>
 </project>
